@@ -6,3 +6,15 @@ body {
   box-sizing: border-box;
 }
 
+.character {
+  float: left;
+}
+
+.character-image {
+  width: 100%;
+  height: 125px;
+}
+
+/*.row-2 {
+  display: none;
+}*/
