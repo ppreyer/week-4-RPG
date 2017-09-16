@@ -1,38 +1,71 @@
+// var gameObject = {
+//   aragon: {
+//     name: "aragon";
+//     health: 120;
+//   }
+// }
+
+// CURRENT BUILD
+
 $(document).ready(function() {
   // Check which character has been clicked
   $(".row-1").on("click", function() {
-    if($(this).hasClass('aragon')) {
+    if($(this).attr("id") === 'aragon') {
     // Apply a border to that image
     $(this).css({"border": "4px solid green"});
-    $(".gandalf, .legolas, .sauron").css("display", "none");
-    $("#character-unhide").text('Your Character');
-    } else if($(this).hasClass('gandalf')) {
-    // Apply a border to that image
-    $(this).css({"border": "4px solid green"});
-    $(".aragon, .legolas, .sauron").css("display", "none");
+    $("#legolas, #gandalf, #sauron").css("display", "none");
+    $(".row-2").css("display", "inline");  
+    }
+  })
+});
 
-    $("#character-unhide").text('Your Character');
-    // $("#character-hide").css("display", "none");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// EXTRA CODE
+
+
+//     $(".row-1-gandalf, .row-1-legolas, .row-1-sauron").css("display", "none");
+//     // $(".row-2-gandalf, .row-2-legolas, .row-2-sauron").show();
+//     $("#character-unhide").text('Your Character');
+//     } else if($(this).hasClass('gandalf')) {
+//     // Apply a border to that image
+//     $(this).css({"border": "4px solid green"});
+//     $(".row-1-aragon, .row-1-legolas, .row-1-sauron").css("display", "none");
+
+//     $("#character-unhide").text('Your Character');
+//     // $("#character-hide").css("display", "none");
     
-    } else if($(this).hasClass('legolas')) {
-    // Apply a border to that image
-    $(this).css({"border": "4px solid green"});
-    $(".aragon, .gandalf, .sauron").css("display", "none");
+//     } else if($(this).hasClass('legolas')) {
+//     // Apply a border to that image
+//     $(this).css({"border": "4px solid green"});
+//     $(".row-1-aragon, .row-1-gandalf, .row-1-sauron").css("display", "none");
 
-    $("#character-unhide").text('Your Character');
-    // $("#character-hide").css("display", "none");
+//     $("#character-unhide").text('Your Character');
+//     // $("#character-hide").css("display", "none");
     
-    } else {
-      // Apply a border to that image
-      $(this).css({"border": "4px solid green"});
-      $(".aragon, .gandalf, .legolas").css("display", "none");
+//     } else {
+//       // Apply a border to that image
+//       $(this).css({"border": "4px solid green"});
+//       $(".row-1-aragon, .row-1-gandalf, .row-1-legolas").css("display", "none");
 
-      $("#character-unhide").text('Your Character');
-      }
+//       $("#character-unhide").text('Your Character');
+//       }
 
-})
+// })
 
-})
+// })
 
 
 
