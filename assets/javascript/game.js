@@ -10,10 +10,12 @@
 $(document).ready(function() {
   // Check which character has been clicked
   $(".row-1").on("click", function() {
-    var chosenCharacter = $(".chosen-character").html(this);
-    $(".chosen-character").append(chosenCharacter);
-    // $(".row-1").css("display", "none");
-    $(".chosen-character").css({"border": "4px solid green"});
+    var holder = $(this).clone();
+    $(".display-character").empty();
+    $(".display-character").append(holder);
+    // var displayCharacter = $(".chosen-character").text(this);
+    // $(".display-character").append(displayCharacter)
+    $(".display-character").css({"border": "4px solid green"});
   })
 })
 
