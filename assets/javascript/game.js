@@ -10,14 +10,12 @@
 $(document).ready(function() {
   // Check which character has been clicked
   $(".row-1").on("click", function() {
-    if($(this).attr("id") === 'aragon') {
-    // Apply a border to that image
-    $(this).css({"border": "4px solid green"});
-    $("#legolas, #gandalf, #sauron").css("display", "none");
-    $(".row-2").css("display", "inline");  
-    }
+    var chosenCharacter = $(".chosen-character").html(this);
+    $(".chosen-character").append(chosenCharacter);
+    // $(".row-1").css("display", "none");
+    $(".chosen-character").css({"border": "4px solid green"});
   })
-});
+})
 
 
 
