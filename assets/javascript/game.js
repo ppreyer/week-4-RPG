@@ -1,23 +1,78 @@
-// var gameObject = {
-//   aragon: {
-//     name: "aragon";
-//     health: 120;
-//   }
-// }
+var gameObject = {
+  "aragon": {
+    name: "aragon",
+    health: 120,
+    attack: 8,
+    defense: 16
+  },
+  "legolas": {
+    name: "legolas",
+    health: 100,
+    attack: 18,
+    defense: 5
+  },
+  "gandalf": {
+    name: "gandalf",
+    health: 150,
+    attack: 5,
+    defense: 20
+  },
+  "sauron": {
+    name: "aragon",
+    health: 120,
+    attack: 3,
+    defense: 25
+  }
+}
+
+
 
 // CURRENT BUILD
+
+var attackMode = false;
+var attackHealth = 0;
 
 $(document).ready(function() {
   // Check which character has been clicked
   $(".row-1").on("click", function() {
-    var holder = $(this).clone();
-    $(".display-character").empty();
-    $(".display-character").append(holder);
-    // var displayCharacter = $(".chosen-character").text(this);
-    // $(".display-character").append(displayCharacter)
-    $(".display-character").css({"border": "4px solid green"});
+    // var holder = $(this).clone();
+    $(this).addClass('clicked');
+    if(attackMode === false) {
+      $(".display-character").empty();
+      $(".display-character").append(this);
+      // $(".clicked").css("display", "none");
+      $(".display-character").css({"border": "4px solid green"});
+      $(".col-md-3").addClass("col-md-4");
+      $(".col-md-3").removeClass("col-md-3");
+      attackMode = true;
+    } else {
+      $(".enemy-character").empty();
+      $(".enemy-character").append(this);
+      // $(".clicked").css("display", "none");
+      $(".enemy-character").css({"border": "4px solid red"});
+    }
   })
+
+var nameOfAttacker = $(".display-character").find("id");
+var nameOfDefender = $(".enemy-character").find("id");
+
+  $(".attack").on("click", function() {
+    switch(nameOfAttacker) {
+      case "aragon":
+        gameObject[nameOfDefender].health = gameObject[nameOfDefender].health - gameObject[nameOfAttacker].attack;
+        $(".enemy-character").find(".hp").text(gameObject[nameOfDefender].health);
+        // Decrease hp of enemy by aragon's attack
+        // Increase attack counter
+        // Decrease health of aragon by enemy's defense metric
+      break;
+      default:
+    console.log('default');
+    }
+  })
+
 })
+
+
 
 
 

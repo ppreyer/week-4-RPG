@@ -6,9 +6,6 @@ body {
   box-sizing: border-box;
 }
 
-.character {
-  float: left;
-}
 
 .character-image {
   width: 100%;
